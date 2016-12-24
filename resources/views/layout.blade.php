@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="{{ elixir('css/app.css')}}">
   <title>Laracasts</title>
   @yield('header')
 </head>
