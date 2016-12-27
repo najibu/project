@@ -5,7 +5,8 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Card extends Model
-{
+{ 
+    protected $fillable = ['title'];
     public function notes()
     {
       return $this->hasMany(Note::class);
@@ -18,6 +19,6 @@ class Card extends Model
 
     public function addNote(Note $note)
     {
-      $this->notes()->save($note);
+      return $this->notes()->save($note);
     }
 }
