@@ -9,7 +9,15 @@ Route::group(['middleware' => ['web']], function () {
   Route::patch('notes/{note}', 'NotesController@update');
 
   Route::auth();
-  Route::get('/home', 'HomeController@index');
+  Route::get('/dashboard', 'HomeController@index');
+  Route::get('foobar', function(){
+    $user = new App\User;
+    $user->username = 'JohnAdminstratorDoe';
+    $user->email = 'najibu@example.com';
+    $user->password = bcrypt('password');
+    $user->save();
+    return 'Done';
+  });
 });
 
 
